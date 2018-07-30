@@ -40,3 +40,4 @@
 
 // const dog = new Dog("Tuzik")
 
+console.log(charCodeAt(r))
