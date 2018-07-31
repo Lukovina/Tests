@@ -30,7 +30,6 @@ cells.forEach(item => item.addEventListener('click', () => findNeighbours(item))
     arrayRender(field);
    
     function findNeighbours(target) {
-        console.log(target)
         let num = target.id.slice(3),
             nextElements = [],
             bottomNeighbour = document.querySelector(`#id-${+num + 6}`),
