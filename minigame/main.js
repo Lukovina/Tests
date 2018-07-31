@@ -22,42 +22,34 @@ window.onload = function(){
           cells.forEach(item=>item.addEventListener("click", ()=>findNeighbours(item)))
     }
 
-    function findNeighbours(target){
-        console.log(target)
-        let num = target.id.slice(3);
-        let bottomNeighbour = document.querySelector(`#id-${+num + 6}`)
-        let upperNeighbour = document.querySelector(`#id-${+num - 6}`)
-        let rightNeighbour = document.querySelector(`#id-${+num + 1}`)
-        let leftNeighbour = document.querySelector(`#id-${+num - 1}`)
+    arrayRender(field)
+
+    async function findNeighbours(target){
+        let num = target.id.slice(3),
+            bottomNeighbour = document.querySelector(`#id-${+num + 6}`),
+            upperNeighbour = document.querySelector(`#id-${+num - 6}`),
+            rightNeighbour = document.querySelector(`#id-${+num + 1}`),
+            leftNeighbour = document.querySelector(`#id-${+num - 1}`);
 
         if(bottomNeighbour.classList.value == target.classList.value) {
-            if(bottomNeighbour){findNeighbours(bottomNeighbour)}
-            clearCell(bottomNeighbour);
+            findNeighbours(bottomNeighbour)
         }
         if(upperNeighbour.classList.value == target.classList.value) {
-            if(upperNeighbour){findNeighbours(upperNeighbour)}
-            clearCell(upperNeighbour);
+            findNeighbours(upperNeighbour)
         }
         if(rightNeighbour.classList.value == target.classList.value) {
-            if(rightNeighbour){findNeighbours(rightNeighbour)}
-            clearCell(rightNeighbour);
+            findNeighbours(rightNeighbour)
         }
         if(leftNeighbour.classList.value == target.classList.value) {
-            if(leftNeighbour){findNeighbours(leftNeighbour)}
-            clearCell(leftNeighbour);
+            findNeighbours(leftNeighbour)
         }
         
         clearCell(target)
     }
 
     function clearCell(cell) {
-        // target.classList = "cell"
+        cell.classList = "cell"
         cell.innerHTML = ""
-        console.dir(cell)
     }
-
-
-    
-    arrayRender(field)
 
 }
