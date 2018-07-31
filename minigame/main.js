@@ -30,29 +30,29 @@ cells.forEach(item => item.addEventListener('click', () => findNeighbours(item))
     arrayRender(field);
    
     function findNeighbours(target) {
-        let num          = target.id.slice(3);
-        let nextElements = [];
+        console.log(target)
+        let num = target.id.slice(3),
+            nextElements = [],
+            bottomNeighbour = document.querySelector(`#id-${+num + 6}`),
+            upperNeighbour = document.querySelector(`#id-${+num - 6}`),
+            rightNeighbour = document.querySelector(`#id-${+num + 1}`),
+            leftNeighbour = document.querySelector(`#id-${+num - 1}`)
 
-        let bottomNeighbour = document.querySelector(`#id-${+num + 6}`);
-            if (bottomNeighbour && bottomNeighbour.classList.value === target.classList.value) {
+        if (bottomNeighbour && bottomNeighbour.classList.value === target.classList.value) {
             nextElements.push(bottomNeighbour);
         }
-        let upperNeighbour = document.querySelector(`#id-${+num - 6}`);
-            if (upperNeighbour && upperNeighbour.classList.value === target.classList.value) {
+        if (upperNeighbour && upperNeighbour.classList.value === target.classList.value) {
             nextElements.push(upperNeighbour);
         }
-        let rightNeighbour = document.querySelector(`#id-${+num + 1}`);
-            if (rightNeighbour && rightNeighbour.classList.value === target.classList.value) {
+        if (rightNeighbour && rightNeighbour.classList.value === target.classList.value) {
             nextElements.push(rightNeighbour);
         }
-        let leftNeighbour = document.querySelector(`#id-${+num - 1}`);
-            if (leftNeighbour && leftNeighbour.classList.value === target.classList.value) {
+        if (leftNeighbour && leftNeighbour.classList.value === target.classList.value) {
             nextElements.push(leftNeighbour);
         }
-     // clear current cell
+
      clearCell(target);
    
-     // find and clear neighbours for all others
     nextElements.forEach(el => {
         findNeighbours(el);
         clearCell(el)
