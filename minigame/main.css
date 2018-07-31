@@ -5,7 +5,9 @@
 }
 
 .container{
-    margin: auto;
+    position: absolute;
+    left: Calc(50% - 135px);
+    top: Calc(50% - 140px);
     width: 255px;
     height: 290px;
     display: flex;
