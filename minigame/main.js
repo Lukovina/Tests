@@ -31,16 +31,16 @@ window.onload = function(){
             rightNeighbour = document.querySelector(`#id-${+num + 1}`),
             leftNeighbour = document.querySelector(`#id-${+num - 1}`);
 
-        if(bottomNeighbour.classList.value == target.classList.value) {
-            findNeighbours(bottomNeighbour)
-        }
-        if(upperNeighbour.classList.value == target.classList.value) {
-            findNeighbours(upperNeighbour)
-        }
-        if(rightNeighbour.classList.value == target.classList.value) {
-            findNeighbours(rightNeighbour)
-        }
-        if(leftNeighbour.classList.value == target.classList.value) {
+        // if(bottomNeighbour && bottomNeighbour.classList.value == target.classList.value){
+        //     findNeighbours(bottomNeighbour)
+        // }    
+        // if(upperNeighbour && upperNeighbour.classList.value == target.classList.value) {
+        //     findNeighbours(upperNeighbour)
+        // }
+        // if(rightNeighbour && rightNeighbour.classList.value == target.classList.value) {
+        //     findNeighbours(rightNeighbour)
+        // }
+        if(leftNeighbour && leftNeighbour.classList.value == target.classList.value) {
             findNeighbours(leftNeighbour)
         }
         
