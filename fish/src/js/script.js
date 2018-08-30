@@ -32,6 +32,12 @@ function setup() {
 
   fish.anchor.set(0.5, 0.5);
   fish.position.set(app.view.width/2, app.view.height/2);
+  fish.width = app.view.width/5;
+  fish.height = fish.width/2;
+
+  worm.width = wormRed.width = app.view.width/25;
+  worm.height = wormRed.height = worm.width;
+
   fish.vx = 0;
   fish.vy = 0;
 
@@ -112,6 +118,10 @@ window.addEventListener("resize", function(){
   LayoutManager.fitLayout();
   water.width = app.view.width;
   water.height = app.view.height;
+  fish.width = app.view.width/5;
+  fish.height = fish.width/2;
+  worm.width = wormRed.width = app.view.width/25;
+  worm.height = wormRed.width = worm.width;
   fish.position.set(app.view.width/2, app.view.height/2);
   worm.position.set(app.view.width-100, 30);
   wormRed.position.set(Math.random()*app.view.width, 0);
